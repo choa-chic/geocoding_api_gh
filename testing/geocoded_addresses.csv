@@ -1,0 +1,6 @@
+id,address,city,fips_county,lat,lon,number,precision,prenum,score,state,street,zip,geocode_failed
+1,3333 Burnet Ave Cincinnati OH 45229,Cincinnati,39061,39.141224,-84.500449,3333,range,,0.949,OH,Burnet Ave,45229,False
+2,1600 Amphitheatre Parkway Mountain View CA 94043,Mountain View,06085,37.423472,-122.086546,1600,range,,0.94,CA,Amphitheatre Pkwy,94043,False
+3,1 Infinite Loop Cupertino CA 95014,Cupertino,06085,37.331732,-122.030665,3,street,,0.843,CA,Infinite Loop,95014,False
+4,350 Fifth Avenue New York NY 10118,New York,36061,40.748439,-73.98456,350,range,,0.856,NY,5th Ave,10118,False
+5,221B Baker Street London NW1 6XE UK,,,45.916278,-119.349837,221,range,,0.707,,6th St,97882,False
