@@ -17,7 +17,7 @@ jobs:
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Build Docker image
-        run: docker build -t ghcr.io/${{ github.repository }}/my-app:${{ github.sha }} .
+        run: docker build -t ghcr.io/${{ github.repository }}/geocoding-api:${{ github.sha }} .
 
       - name: Push Docker image
-        run: docker push ghcr.io/${{ github.repository }}/my-app:${{ github.sha }}
+        run: docker push ghcr.io/${{ github.repository }}/geocoding-api:${{ github.sha }}
