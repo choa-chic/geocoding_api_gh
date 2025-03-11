@@ -1,6 +1,6 @@
 # Web API For DeGAUSS Containers
 
-![Github container build status](https://github.com/choa-chic/docs/geocoding_api_gh/workflows/publish.yml/badge.svg)
+[![Publish Docker image](https://github.com/choa-chic/geocoding_api_gh/actions/workflows/publish.yml/badge.svg)](https://github.com/choa-chic/geocoding_api_gh/actions/workflows/publish.yml)
 
 ## Information about DeGAUSS
 
