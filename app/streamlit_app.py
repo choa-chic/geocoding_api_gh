@@ -4,7 +4,7 @@ import requests
 from urllib.parse import quote_plus
 
 def geocode_address(address):
-    response = requests.get(f"http://localhost:9080/geocode?address={quote_plus(address)}")
+    response = requests.get(f"http://flask:9080/geocode?address={quote_plus(address)}")
     if response.status_code == 200:
         return response.json()
     else:

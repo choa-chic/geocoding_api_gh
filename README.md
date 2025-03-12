@@ -32,6 +32,32 @@ export TMPDIR=/data/tmp
 ```
 
 ## Steps
+
+### Docker Compose (multiple containers)
+
+If necessary
+
+```sh
+pip install podman-compose # (ideally within an environment)
+```
+
+This is using podman, docker commands should be similar.
+
+```sh
+podman-compose build
+podman-compose up
+```
+
+```sh
+podman-compose down
+```
+
+#### Testing 
+10) Try the single-address user interface
+
+[Single Address User Interface](http://localhost:9080/geocodeweb)
+
+### Single Container
 1) Login to the github container repository (most recent deguass builds) using a github personal access token.
 
 The requires that the github personal access token be stored in a file named pat.txt
@@ -86,10 +112,6 @@ python test_csv_method.py
 ```sh
 docker stop gs && docker rm gs
 ```
-
-10) Try the single-address user interface
-
-[Single Address User Interface](http://localhost:9080/geocodeweb)
 
 ## Working with streamlit and user interface
 

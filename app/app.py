@@ -8,7 +8,7 @@ from io import BytesIO, StringIO
 
 app = Flask(__name__)
 app.debug = True
-logging.basicConfig(filename='log/app.log', level=logging.INFO,
+logging.basicConfig(filename='/var/log/app.log', level=logging.INFO,
                     format='%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]')
 
 # trim whitespace in the csv
