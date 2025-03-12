@@ -3,22 +3,24 @@ FROM ghcr.io/degauss-org/geocoder:v3.4.0
 # Install necessary packages
 RUN apt-get update && apt-get install -y python3-pip curl
 
-# Install Flask and gunicorn
-RUN pip3 install flask gunicorn requests
+# Set the working directory
+COPY requirements.txt .
 
-# Expose port 9080
-EXPOSE 9080
+# Install Flask and gunicorn
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the Flask app into the container
-COPY app.py /app/app.py
-COPY templates /app/templates
-COPY conf /app/conf
-
-# Set the working directory
 WORKDIR /app
+COPY app/*.py .
+COPY templates ../templates
+COPY conf ../conf
+
+# Expose port 9080, 8502
+EXPOSE 9080 8502
 
 # create log directory
 RUN mkdir -p /var/log/gunicorn
 
 # Override the ENTRYPOINT with gunicorn
-ENTRYPOINT ["gunicorn","-c","conf/gunicorn.conf.py", "-w","2","--bind", "0.0.0.0:9080", "--log-level", "debug", "app:app"]
+ENTRYPOINT ["sh","-c","gunicorn -c conf/gunicorn.conf.py -w 4 --bind 0.0.0.0:9080 --log-level debug app:app \
+    & streamlit run --server.port 8502 streamlit_app.py"]

@@ -52,7 +52,10 @@ docker build -t geocoder-api .
 docker run -it -d --replace --name gs \
     -v $(pwd)/logs/gunicorn:/var/log/gunicorn \
     -v $(pwd)/logs/app:/app/log \
-    -p 9080:9080 localhost/geocoder-api
+    -v $(pwd)/app:/app \
+    -p 9080:9080 \
+    -p 8502:8502 \
+    geocoder-api:latest
 ```
 
 4) (optional) Test the internal geocoding.
@@ -75,14 +78,20 @@ cd testing
 python test_csv_method.py
 ```
 
-7) Test the csv upload method
+8) Test the csv upload method
 
 [Test Url](http://localhost:9080/geocode_csv)
 
-7) (when desired) Stop and remove the container.
+9) (when desired) Stop and remove the container.
 ```sh
 docker stop gs && docker rm gs
 ```
+
+10) Try the single-address user interface
+
+[Single Address User Interface](http://localhost:9080/geocodeweb)
+
+## Working with streamlit and user interface
 
 ## Alternative Method with Docker-compose
 **Not currently working**
