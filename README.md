@@ -2,6 +2,9 @@
 
 [![Publish Docker image](https://github.com/choa-chic/geocoding_api_gh/actions/workflows/publish.yml/badge.svg)](https://github.com/choa-chic/geocoding_api_gh/actions/workflows/publish.yml)
 
+TODO
+-[] add census_block_group to pipeline
+
 ## Information about DeGAUSS
 
 [DeGAUSS Introduction](https://degauss.org/)
@@ -46,6 +49,11 @@ This is using podman, docker commands should be similar.
 ```sh
 podman-compose build
 podman-compose up
+```
+
+```sh
+docker compose build
+docker compose up
 ```
 
 ```sh

@@ -23,4 +23,4 @@ EXPOSE 9080
 RUN mkdir -p /var/log/gunicorn
 
 # Override the ENTRYPOINT with gunicorn
-ENTRYPOINT ["gunicorn","-c","/conf/gunicorn.conf.py", "-w", "1", "-b", "0.0.0.0:9080", "--timeout", "120", "--workers", "4", "app:app"]
+ENTRYPOINT ["gunicorn","-c","/conf/gunicorn.conf.py", "-w", "4", "-b", "0.0.0.0:9080", "--timeout", "120", "app:app"]
